@@ -9,14 +9,14 @@
    })
 
    const isError = computed(()=>{
-        return props.alert.type === "ERROR" ?'bg-green-500': 'bg-red-800';
+        return props.alert.type === "ERROR";
    })
 </script>
 
 
 <template>
     <div 
-        :class="isError"
+        :class="[isError?'bg-red-800':'bg-green-500']"
         class="text-white text-center p-3 uppercase font-bold mb-3 rounded-md"
     >
         <p>{{ alert.message }}</p>
